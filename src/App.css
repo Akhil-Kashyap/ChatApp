@@ -1,0 +1,260 @@
+:root {
+	--main-color: #5ea3d0;
+	--secondary-color: white;
+	--main-text-color: #3e5869;
+	--secondary-text-color: #b0c7d6;
+	--send-message-form: #f5f5f5;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: system-ui;
+	font-weight: 200;
+	color: #3e5869;
+	overflow: hidden;
+}
+
+#root {
+	height: 100%;
+}
+
+.app {
+	display: grid;
+	height: 100%;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 60px;
+	grid-template-areas: "r m m m m m" "r m m m m m" "r m m m m m" "r m m m m m" "r m m m m m" "n s s s s s";
+}
+
+.new-room-form {
+	grid-area: n;
+}
+
+.rooms-list {
+	grid-area: r;
+	font-family: 'Acme', sans-serif;
+	font-size: 20px;
+}
+
+.message-list {
+	grid-area: m;
+	font-family: 'Cuprum', sans-serif;
+	font-size: 20px;
+}
+
+.send-message-form {
+	grid-area: s;
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
+	font-size: 25px;
+}
+
+/* REST OF CSS */
+.rooms-list {
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: black;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 100%;
+}
+
+::-webkit-scrollbar {
+	width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.rooms-list ul {
+	list-style-type: none;
+	padding: 0;
+	overflow: scoll;
+}
+
+.rooms-list li {
+	margin: 10px 0;
+}
+
+.rooms-list h3 {
+	margin: 5px 0;
+	color: var(--secondary-color);
+}
+
+.rooms-list .room a {
+	color: white;
+	opacity: 0.4;
+	font-weight: 200;
+	text-decoration: none;
+}
+
+.rooms-list .room.active a {
+	color: white;
+	opacity: 1;
+}
+
+.new-room-form {
+	padding: 0 5px;
+	background: black;
+
+	padding-bottom: 5px;
+}
+
+.new-room-form form {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-style: solid;
+	border-color: white;
+	border-width: thin;
+	border-radius: 20px;
+	color: white;
+}
+
+.new-room-form input {
+	width: 100%;
+	background: black;
+	color: white;
+	padding: 5px;
+	font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+	.new-room-form input {
+		width: 135px;
+	}
+}
+.new-room-form button {
+	background: white;
+	height: 5px;
+	width: 5px;
+	border: 0;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.new-room-form input::placeholder {
+	color: white;
+	font-weight: 200;
+	text-align: center;
+	opacity: 0.5;
+}
+
+.new-room-form input:focus {
+	outline-width: 0;
+}
+
+.new-room-form input {
+	padding-left: 15px;
+	border: 0;
+}
+
+.new-room-form button {
+	border: 0;
+}
+
+.message {
+	margin: 15px 0;
+	padding-left: 20px;
+}
+
+.message .message-username {
+	font-size: 14px;
+	color: whitesmoke;
+	opacity: 0.8;
+	margin-bottom: 7px;
+}
+.message .message-text {
+	background: #403e3e;
+	color: white;
+	display: inline;
+	padding: 4px 8px;
+	border-radius: 8px;
+}
+
+.message-list {
+	box-sizing: border-box;
+	padding-left: 6px;
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+	background: #222327;
+}
+
+::-webkit-scrollbar {
+	width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.message-list .join-room {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-size: 34px;
+	font-weight: 300;
+}
+
+.send-message-form {
+	display: flex;
+	background: #222327;
+	padding-bottom: 5px;
+}
+
+.send-message-form input {
+	width: 100%;
+	padding: 15px 10px;
+	margin: 0;
+	border-style: solid;
+	border-color: white;
+	border-radius: 20px;
+	border-width: thin;
+	background: #222327;
+	font-weight: 200;
+	color: white;
+	font-size: 15px;
+}
+
+.send-message-form input:focus {
+	outline-width: 0;
+}
+
+.send-message-form input::placeholder {
+	font-size: 15px;
+	color: white;
+}
+
+.help-text {
+	position: absolute;
+	top: 10px;
+}
