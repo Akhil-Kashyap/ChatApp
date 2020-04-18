@@ -1,6 +1,6 @@
 # ChatApp
  
-A webpage for chatting in various Chatrooms based on your preference, built with React, Redux, JavaScript, and CSS and Chatkit API.
+A webpage for chatting in various Chatrooms based on your preference, built with React and Chatkit API.
 
 
 ## Installation and Setup Instruction:
